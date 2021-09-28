@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default function Home(): JSX.Element {
-  return <div>Home <p>Hello, world!</p></div>;
+    return (
+        <div>
+            Home <p>Hello, world!</p>
+        </div>
+    );
 }
