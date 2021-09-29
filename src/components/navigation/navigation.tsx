@@ -12,6 +12,22 @@ export default function Navigation() {
             name: 'Home',
             path: '/',
         },
+        {
+            name: 'Portfolio',
+            path: '/portfolio',
+        },
+        {
+            name: 'Skills',
+            path: '/skills',
+        },
+        {
+            name: 'Progress',
+            path: '/progress',
+        },
+        {
+            name: 'User',
+            path: '/user',
+        },
     ];
     return (
         <Router>
