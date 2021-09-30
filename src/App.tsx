@@ -6,6 +6,7 @@ import Navigation from './components/navigation/navigation';
 
 // Import views
 import Home from './views/home/home';
+import LogIn from './views/log-in/log-in';
 import SignUp from './views/sign-up/sign-up';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
                 <Switch>
                     <Route path="/sign-up">
                         <SignUp />
+                    </Route>
+                    <Route path="/log-in">
+                        <LogIn />
                     </Route>
                     <Route path="/">
                         <Home />
