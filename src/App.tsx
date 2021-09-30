@@ -6,14 +6,18 @@ import Navigation from './components/navigation/navigation';
 
 // Import views
 import Home from './views/home/home';
+import SignUp from './views/sign-up/sign-up';
 
 function App() {
     return (
         <div>
-            <Navigation />
             <Router>
+                <Navigation />
                 <Switch>
-                    <Route exact path="/">
+                    <Route path="/sign-up">
+                        <SignUp />
+                    </Route>
+                    <Route path="/">
                         <Home />
                     </Route>
                 </Switch>

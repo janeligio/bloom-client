@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './navigation.sass';
 
 export default function Navigation() {
@@ -30,16 +30,14 @@ export default function Navigation() {
         },
     ];
     return (
-        <Router>
-            <nav id="navigation">
-                <ul>
-                    {links.map((link, index) => (
-                        <li key={index}>
-                            <Link to={link.path}>{link.name}</Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-        </Router>
+        <nav id="navigation">
+            <ul>
+                {links.map((link, index) => (
+                    <li key={index}>
+                        <Link to={link.path}>{link.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     );
 }

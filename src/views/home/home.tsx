@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import './home.sass';
 
 export default function Home(): JSX.Element {
@@ -19,11 +20,11 @@ export default function Home(): JSX.Element {
                 Set goals for yourself and track your progress.
             </Typography>
 
-            <div className="actions">
-                <Link href="/portfolio">Try it out</Link>
+            <nav className="actions">
+                <Link to="/portfolio">Try it out</Link>
 
-                <Link href="/sign-up">Sign up</Link>
-            </div>
+                <Link to="/sign-up">Sign up</Link>
+            </nav>
         </main>
     );
 }
