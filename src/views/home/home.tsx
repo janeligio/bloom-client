@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import './home.sass';
 
 export default function Home(): JSX.Element {
@@ -18,6 +18,12 @@ export default function Home(): JSX.Element {
             <Typography variant="body1">
                 Set goals for yourself and track your progress.
             </Typography>
+
+            <div className="actions">
+                <Link href="/portfolio">Try it out</Link>
+
+                <Link href="/sign-up">Sign up</Link>
+            </div>
         </main>
     );
 }
