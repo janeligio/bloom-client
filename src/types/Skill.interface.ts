@@ -6,7 +6,7 @@ export default interface Skill {
     proficiency: number;
 }
 
-enum SkillCategory {
+export enum SkillCategory {
     TechnicalSkill = 'TechnicalSkill',
     SoftSkill = 'SoftSkill',
     Language = 'Language',

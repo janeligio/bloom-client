@@ -8,6 +8,7 @@ import Navigation from './components/navigation/navigation';
 import Home from './views/home/home';
 import LogIn from './views/log-in/log-in';
 import SignUp from './views/sign-up/sign-up';
+import Portfolio from './views/portfolio/portfolio';
 
 function App() {
     return (
@@ -20,6 +21,9 @@ function App() {
                     </Route>
                     <Route path="/log-in">
                         <LogIn />
+                    </Route>
+                    <Route path="/portfolio">
+                        <Portfolio />
                     </Route>
                     <Route path="/">
                         <Home />
