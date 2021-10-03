@@ -1,6 +1,7 @@
 import React from 'react';
 import Skill, { SkillCategory } from '../../types/Skill.interface';
 import { Paper, Typography } from '@mui/material';
+import ProficiencyComponent from '../../components/proficiency/Proficiency';
 import './portfolio.sass';
 
 export default function Portfolio() {
@@ -11,7 +12,7 @@ export default function Portfolio() {
                 <Typography variant="body1">
                     {name} ({category})
                 </Typography>
-                {ProficiencyComponent({ proficiency }).map((i) => i)}
+                <ProficiencyComponent proficiency={proficiency} />
             </div>
         );
     });
@@ -32,15 +33,6 @@ export default function Portfolio() {
             </Paper>
         </main>
     );
-}
-
-function ProficiencyComponent(props: { proficiency: number }) {
-    const { proficiency } = props;
-    const proficiencyComponent = [];
-    for (let i = 0; i < proficiency; i++) {
-        proficiencyComponent.push(<span>&#9733;</span>);
-    }
-    return proficiencyComponent;
 }
 
 const exampleSkills: Skill[] = [];
