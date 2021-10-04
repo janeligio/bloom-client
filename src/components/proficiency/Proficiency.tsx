@@ -14,8 +14,6 @@ export default function ProficiencyComponent(props: { proficiency: number }) {
     const [color, setColor] = useState('red');
 
     useEffect(() => {
-        console.log('Changed');
-        console.log(`Prof: ${proficiency}`);
         setColor(calculateBarColor(proficiency));
     }, [setColor, proficiency]);
 
@@ -47,10 +45,10 @@ export default function ProficiencyComponent(props: { proficiency: number }) {
             <IconButton aria-label="minus" size="small" onClick={subtract}>
                 <RemoveIcon fontSize="inherit" />
             </IconButton>
-            <StyledLinearProgress variant="determinate" value={proficiency} />
             <IconButton aria-label="plus" size="small" onClick={add}>
                 <ControlPointIcon fontSize="inherit" />
             </IconButton>
+            <StyledLinearProgress variant="determinate" value={proficiency} />
         </Box>
     );
 }

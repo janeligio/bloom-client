@@ -31,4 +31,10 @@ export interface ProjectExperience extends Experience {
     description: string[] | string;
     startDate?: string;
     endDate?: string;
+    links: Link[];
+}
+
+interface Link {
+    name: string;
+    url: string;
 }

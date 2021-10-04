@@ -26,7 +26,7 @@ export default function Portfolio() {
                 <Typography variant="h2">Projects</Typography>
             </Paper>
             <Paper className="section">
-                <Typography variant="h2">Experiences</Typography>
+                <Typography variant="h2">Work Experience</Typography>
             </Paper>
             <Paper className="section">
                 <Typography variant="h2">Education</Typography>
@@ -43,7 +43,7 @@ for (const skill of ['JavaScript', 'React', 'HTML', 'CSS', 'Node']) {
     const skillObj: Skill = {
         id: index,
         name: skill,
-        proficiency: 3,
+        proficiency: 5,
         category: [SkillCategory.Language],
     };
     exampleSkills.push(skillObj);
