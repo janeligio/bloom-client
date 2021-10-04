@@ -1,10 +1,12 @@
 import React from 'react';
 import Skill, { SkillCategory } from '../../types/Skill.interface';
-import { Chip, Paper, Stack, Typography } from '@mui/material';
+import { Link as LinkInterface } from '../../types/Experience.interface';
+import { Chip, Link, Paper, Stack, Typography } from '@mui/material';
 import ProficiencyComponent from '../../components/proficiency/Proficiency';
 import './portfolio.sass';
 import {
     EducationExperience,
+    ProjectExperience,
     WorkExperience,
 } from '../../types/Experience.interface';
 
@@ -68,9 +70,7 @@ export default function Portfolio() {
             if (typeof description === 'string') {
                 formattedDescription = (
                     <li>
-                        <Typography variant="body1">
-                            {formattedDescription}
-                        </Typography>
+                        <Typography variant="body1">{description}</Typography>
                     </li>
                 );
             }
@@ -107,6 +107,75 @@ export default function Portfolio() {
             </div>
         );
     });
+
+    const projectsComponent = exampleProjects.map(
+        (project: ProjectExperience) => {
+            const {
+                id,
+                type,
+                skills,
+                name,
+                description,
+                startDate,
+                endDate,
+                links,
+            } = project;
+
+            let formattedSkills;
+            if (skills) {
+                formattedSkills = (
+                    <Stack direction="row" spacing={2}>
+                        {skills.map((skill: Skill) => (
+                            <Chip label={skill.name} key={`${skill.id}`} />
+                        ))}
+                    </Stack>
+                );
+            }
+            let formattedDescription;
+            if (description) {
+                if (typeof description === 'string') {
+                    formattedDescription = (
+                        <li>
+                            <Typography variant="body1">
+                                {description}
+                            </Typography>
+                        </li>
+                    );
+                }
+                if (typeof description === 'object') {
+                    // If description is an array of strings, render each string as a paragraph
+
+                    formattedDescription = description.map(
+                        (paragraph: string) => (
+                            <li>
+                                <Typography variant="body1">
+                                    {paragraph}
+                                </Typography>
+                            </li>
+                        )
+                    );
+                }
+            }
+
+            const formattedLinks = (
+                <Stack direction="row" spacing={2}>
+                    {links.map((link: LinkInterface) => (
+                        <Link target="_blank" rel="noreferrer" href={link.url}>
+                            {link.name}
+                        </Link>
+                    ))}
+                </Stack>
+            );
+            return (
+                <div>
+                    <Typography variant="h5">{name}</Typography>
+                    {formattedSkills}
+                    <ul>{formattedDescription}</ul>
+                    {formattedLinks}
+                </div>
+            );
+        }
+    );
     return (
         <main id="portfolio">
             <Paper className="section">
@@ -114,15 +183,16 @@ export default function Portfolio() {
                 {educationComponent}
             </Paper>
             <Paper className="section">
-                <Typography variant="h2">Work Experience</Typography>
-                {workComponent}
-            </Paper>
-            <Paper className="section">
                 <Typography variant="h2">Skills</Typography>
                 {skillsComponent}
             </Paper>
             <Paper className="section">
+                <Typography variant="h2">Work Experience</Typography>
+                {workComponent}
+            </Paper>
+            <Paper className="section">
                 <Typography variant="h2">Projects</Typography>
+                {projectsComponent}
             </Paper>
         </main>
     );
@@ -198,4 +268,22 @@ exampleWork.push({
     position: 'IT Intern',
     startDate: 'May 2019',
     endDate: 'August 2019',
+});
+
+const exampleProjects: ProjectExperience[] = [];
+
+exampleProjects.push({
+    id: 1,
+    type: 'project',
+    skills: [...exampleSkills],
+    name: 'Bloom',
+    description: 'An application to keep track of your skills and projects.',
+    // startDate: null,
+    // endDate: null,
+    links: [
+        {
+            name: 'GitHub',
+            url: 'https://github.com/janeligio/bloom-client',
+        },
+    ],
 });

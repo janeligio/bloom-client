@@ -34,7 +34,7 @@ export interface ProjectExperience extends Experience {
     links: Link[];
 }
 
-interface Link {
+export interface Link {
     name: string;
     url: string;
 }
