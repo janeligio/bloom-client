@@ -21,6 +21,14 @@ export default function Navigation() {
             path: '/skills',
         },
         {
+            name: 'Projects',
+            path: '/projects',
+        },
+        {
+            name: 'Work',
+            path: '/work',
+        },
+        {
             name: 'Progress',
             path: '/progress',
         },

@@ -99,7 +99,7 @@ export default function Portfolio() {
     const skillsComponent = exampleSkills.map((skill: Skill) => {
         const { id, category, name, proficiency } = skill;
         return (
-            <div id={`${id}`}>
+            <div key={`${id}`}>
                 <Typography variant="body1">
                     {name} ({category})
                 </Typography>
