@@ -3,7 +3,7 @@ import Skill from './Skill.interface';
 export default interface Experience {
     id: number;
     type: ExperienceType;
-    skills: Skill[];
+    skills?: Skill[];
 }
 
 type ExperienceType = 'work' | 'education' | 'project';
@@ -20,10 +20,10 @@ export interface WorkExperience extends Experience {
 export interface EducationExperience extends Experience {
     institution: string;
     major: string;
+    degree: string;
     startDate: string;
     endDate?: string;
-    description: string[] | string;
-    courses: string[];
+    courses?: string[];
 }
 
 export interface ProjectExperience extends Experience {
