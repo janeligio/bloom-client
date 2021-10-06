@@ -1,7 +1,9 @@
 import React from 'react';
 import Skill, { SkillCategory } from '../../types/Skill.interface';
 import { Link as LinkInterface } from '../../types/Experience.interface';
-import { Chip, Link, Paper, Stack, Typography } from '@mui/material';
+import { Chip, Divider, Link, Paper, Stack, Typography } from '@mui/material';
+import { TextField } from '@mui/material';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 import ProficiencyComponent from '../../components/proficiency/Proficiency';
 import './portfolio.sass';
 import {
@@ -185,6 +187,14 @@ export default function Portfolio() {
             <Paper className="section">
                 <Typography variant="h2">Skills</Typography>
                 {skillsComponent}
+                <TextField
+                    id="standard-name"
+                    className="add-skill-input"
+                    fullWidth
+                    size="small"
+                    label="Add a skill"
+                    InputProps={{ endAdornment: <AddBoxIcon /> }}
+                />
             </Paper>
             <Paper className="section">
                 <Typography variant="h2">Work Experience</Typography>
